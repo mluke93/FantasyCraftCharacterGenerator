@@ -24,6 +24,29 @@ function findValue(value, array) {
 	return false;
 }
 
-function writeToMain(){	
-	document.getElementById('result').innerHTML = "Your character is a " + characterRace + " " + characterClass + ".";
+	/*Creates a new div which outputs the race and class. It does not override the
+		prior characters, but adds a new one. It also adds an 'X' button to delete
+		specific characters, and I have plans to add the 'Save' button once I have
+		the SQL Server set up. This method of displaying characters may or may not
+		be useful. We'll see in the future. */
+function writeToMain(){
+	//Creates a new Div to contain the result with the id 'res' (see site.css)
+	var newDiv = document.createElement('div');
+	newDiv.id = 'res';
+	newDiv.className = 'res';
+	
+	//Connects information from Generators to a readable format
+	newDiv.innerHTML = "Your character is a " + characterRace + " " + characterClass + ".";
+	
+	//Creates a 'clear' button to remove the div with
+	var btn = document.createElement('button');
+	btn.id = 'btn';
+	btn.innerHTML = 'X';
+	btn.onclick = function() {
+		document.getElementsByTagName('body')[0].removeChild(newDiv);
+	}
+	
+	//Adds the clear button to the div, then adds the div to the body
+	newDiv.appendChild(btn);
+	document.getElementsByTagName('body')[0].appendChild(newDiv);
 }
