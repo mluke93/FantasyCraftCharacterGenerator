@@ -8,13 +8,6 @@
 
 "use strict";
 
-	/*roles contains the five roles that a class can contain. A class is made up of two
-		roles, a primary and a secondary. The primary role will be used in the future to
-		help determine the playstyle when selecting feats. The secondary will as well, but
-		to a lesser degree. NOTE: Classes such as Keeper are pure Specialist. For the purpose
-		of this algorithm, it is treated as Specialist/Specialist. */
-var roles = ['Combatant', 'Backer', 'Talker', 'Solver', 'Specialist', 'Wildcard'];
-
 	/*pRole and sRole are the recorded primary and secondary roles, respectively. */
 var pRole, sRole;
 

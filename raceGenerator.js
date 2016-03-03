@@ -11,30 +11,6 @@
 
 "use strict";
 
-	/*races contains the core 12 Fantasy Craft races. New races can be added easily by adding to the array. */
-var races = ['Drake', 'Dwarf', 'Elf', 'Giant', 'Goblin', 'Human', 'Ogre', 'Orc', 'Pech', 'Rootwalker', 'Saurian', 'Unborn'];
-
-	/*bList is a Blacklist of classes for each race. This Blacklist is used to make sure that
-		no bad combinations of race and class are selected, since the process is random. It is
-		easy to add a new race to the Blacklist, by appending a race and a list of classes. 
-		
-		NOTE: This only contains races that have blacklisted classes. If a race has not, it
-		is not included.
-		
-		TODO: Populate bList. Coming back to this after deliberation with a project partner. */
-var bList = [{race: 'Drake', classes: ['']},
-						{race: 'Dwarf', classes: ['']},
-						{race: 'Elf', classes: ['']},
-						{race: 'Giant', classes: ['']},
-						{race: 'Goblin', classes: ['']},
-						{race: 'Human', classes: ['']},
-						{race: 'Ogre', classes: ['']},
-						{race: 'Orc', classes: ['']},
-						{race: 'Pech', classes: ['']},
-						{race: 'Rootwalker', classes: ['']},
-						{race: 'Saurian', classes: ['']},
-						{race: 'Unborn', classes: ['']},];
-
 	/*This function takes the race that was just randomly selected and the class determined by
 		the classGenerator, and checks bList to see if the class is on the selected race's
 		blacklist. If the class is on the Blacklist for the selected race, it returns true, else

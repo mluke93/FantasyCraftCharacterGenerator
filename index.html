@@ -6,6 +6,9 @@
 		<link href="site.css" rel="stylesheet">
 	</head>
 	<body>
+            
+    <nav id="nav01"></nav>
+      
 		<!-- Header -->
 		<div id='gen'>
 			<h1>Fantasy Craft</h1>
@@ -14,18 +17,22 @@
 			<button id='generate' onClick='generate()'>Generate!</button>
 			<button id='clear' onClick='clearAll()'>Clear</button>
 		</div>
-		
+      
 		<!-- All Scripts -->
 		<script src="helper.js"></script>
+    <script src="lists.js"></script>
 		<script src="classGenerator.js"></script>
 		<script src="raceGenerator.js"></script>
+    <script src="attributeGenerator.js"></script>
 		<script>
-			var characterClass, characterRace;
+        
+			var characterClass, characterRace, characterAttr;
 			
 			/*Runs all character creation generations*/
 			function generate() {
 				characterClass = findClass();
 				characterRace = findRace(characterClass);
+        characterAttr = findAttributes(characterClass, characterRace);
 				writeToMain();
 			}
 			
@@ -35,6 +42,9 @@
 				while (elements.length > 0){
 					document.getElementsByTagName('body')[0].removeChild(elements[0]);
 				}
+          
+      
+          
 			}
 
 		</script>

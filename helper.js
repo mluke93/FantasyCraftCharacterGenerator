@@ -7,6 +7,11 @@
 /*jslint plusplus: true */
 "use strict";
 			
+  /*Adds the navigation bar to the top of our page.
+  
+    NOTE: Add Saved Character page and replace link. */
+document.getElementById("nav01").innerHTML = "<ul id='menu'>" + "<li><a href='index.html'>Generate Character</a></li>" + "<li><a href='index.html'>Saved Characters (TBD)</a></li>" + "</ul>";
+
 	/*Selects a random number between 0 and num. */
 function getRandom(num) {
 	return Math.floor(Math.random() * num);
@@ -36,17 +41,19 @@ function writeToMain(){
 	newDiv.className = 'res';
 	
 	//Connects information from Generators to a readable format
-	newDiv.innerHTML = "Your character is a " + characterRace + " " + characterClass + ".";
+	newDiv.innerHTML = "Your character is a " + characterRace + " " + characterClass + ".<br> Strength: " + characterAttr[0] + ", Dexterity: " + characterAttr[1] + ", Constitution: " + characterAttr[2] + ", Intelligence: " + characterAttr[3] + ", Wisdom: " + characterAttr[4] + ", Charisma: " + characterAttr[5]; 
 	
-	//Creates a 'clear' button to remove the div with
-	var btn = document.createElement('button');
+	//Creates a 'clear' button to remove the div with NOTE: CURRENTLY UNDER RENOVATION, AS IT'S NOT WORKING.
+	/*var btn = document.createElement('button');
 	btn.id = 'btn';
 	btn.innerHTML = 'X';
 	btn.onclick = function() {
 		document.getElementsByTagName('body')[0].removeChild(newDiv);
-	}
+	};
 	
 	//Adds the clear button to the div, then adds the div to the body
 	newDiv.appendChild(btn);
+  */
+  
 	document.getElementsByTagName('body')[0].appendChild(newDiv);
 }
